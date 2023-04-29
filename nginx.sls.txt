@@ -1,0 +1,10 @@
+nginx_deb:
+  file.managed:
+    - name: /srv/salt/nginx/nginx_1.20.2-1~focal_amd64.deb
+    - source: salt://nginx/nginx_1.20.2-1~focal_amd64.deb
+
+copy_nginx_to_bm01:
+  salt.file.copy:
+    - name: /tmp/nginx_1.20.2-1~focal_amd64.deb
+    - dest: /tmp/nginx_1.20.2-1~focal_amd64.deb
+    - tgt: 'BM01'
